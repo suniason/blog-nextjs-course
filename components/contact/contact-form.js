@@ -26,11 +26,10 @@ const ContactForm = () => {
   async function sendMessageHandler(e) {
     e.preventDefault
     try {
-      setRequestStatus('pending')
       await sendContactData({ email, name, message })
       setRequestStatus('success')
-      setMessage('')
-      setMessage('')
+      setEmail('')
+      setName('')
       setMessage('')
     } catch (error) {
       setRequestStatus('error')
